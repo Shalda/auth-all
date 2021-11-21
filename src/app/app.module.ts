@@ -25,6 +25,9 @@ export function MSALInstanceFactory(): IPublicClientApplication {
   return new PublicClientApplication({
     auth: {
       clientId: environment.azureADConfig.clientId,
+      // redirectUri: 'http://localhost:4200',
+      redirectUri: 'https://shalda.github.io/auth-all/',
+      // postLogoutRedirectUri:'https://shalda.github.io/auth-all/'
       redirectUri: 'http://localhost:4200',
       postLogoutRedirectUri:'/'
     },
