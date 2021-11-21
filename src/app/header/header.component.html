@@ -1,0 +1,12 @@
+<mat-toolbar class="header">
+  <mat-radio-group  *ngIf="!authStatus;" [(ngModel)]="provider" (change)="onProviderChange($event)" >
+    <mat-radio-button value="firebase">firebase auth</mat-radio-button>
+    <mat-radio-button value="aws">amazon cognito</mat-radio-button>
+    <mat-radio-button value="azure">azure ad</mat-radio-button>
+  </mat-radio-group>
+  <button mat-raised-button color="primary" class="sign_btn" (click)="logout()"
+          *ngIf="authStatus; else showLogin">Logout</button>
+  <ng-template #showLogin>
+    <button mat-raised-button color="primary" class="sign_btn" (click)="onLogin()">Sign In</button>
+  </ng-template>
+</mat-toolbar>
