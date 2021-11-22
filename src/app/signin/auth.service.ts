@@ -59,7 +59,7 @@ export class AuthService {
   logoutAzure() {
     this.msalAuth
       .logoutPopup({
-        mainWindowRedirectUri: '',
+        mainWindowRedirectUri: '/auth-all',
       })
       .subscribe((data) => {
         this.clearAuthInfo();
